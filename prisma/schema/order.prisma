@@ -1,0 +1,27 @@
+model Order {
+  id        String   @id @default(uuid())
+  orderedAt DateTime
+
+  plateform String
+
+  branchId String
+  branch   Branch @relation(fields: [branchId], references: [id], onDelete: Cascade)
+
+  items     OrderItem[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@index([orderedAt, plateform])
+}
+
+model OrderItem {
+  id          Int     @id @default(autoincrement())
+  productName String
+  quantity    Int
+  price       Decimal
+
+  orderId String
+  Order   Order  @relation(fields: [orderId], references: [id])
+
+  @@index([orderId])
+}

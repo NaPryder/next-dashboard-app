@@ -1,0 +1,28 @@
+model Company {
+  id    String @id @default(uuid())
+  name  String
+  taxId String
+
+  imagePath String?
+
+  users    User[]
+  branches Branch[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([name, taxId])
+}
+
+model Branch {
+  id   String @id @default(uuid())
+  name String @default("Head Quarter")
+
+  companyId String
+  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  order Order[]
+
+  @@unique([name, companyId])
+  @@index([companyId])
+}
