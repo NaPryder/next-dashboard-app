@@ -32,7 +32,11 @@ body {
 }
 
 @layer utilities {
-  .input-class {
+  /* .input-class {
     @apply t
+  } */
+
+  .card-container {
+    @apply flex flex-col m-2 bg-slate-300 p-2 rounded-lg shadow-md;
   }
 }
