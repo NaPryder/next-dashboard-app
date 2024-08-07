@@ -47,17 +47,8 @@ export default function RevenueChart({ data }: { data: Revenue[] }) {
     if (data) {
       setLoading(false)
     }
-    // OverviewBarChart().then(
-    //   data => {
-
-    //     setData(data)
-    //     setLoading(false)
-    //   }
-    // )
   }, [data])
 
-  // if (isLoading) return <Skeleton content="Loading ..." />
-  // if (data.length === 0) return <Skeleton content="No data" />
 
 
   return (

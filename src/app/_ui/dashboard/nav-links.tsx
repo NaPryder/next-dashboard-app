@@ -12,7 +12,8 @@ interface LinkPath {
 }
 
 const links: LinkPath[] = [
-  { name: 'Overview', href: '/dashboard', icon: HomeIcon },
+  { name: 'Overview', href: '/', icon: HomeIcon },
+  { name: 'Overview2', href: '/dashboard', icon: HomeIcon },
   { name: 'Financial', href: '/dashboard/financial', icon: DocumentDuplicateIcon },
   { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
   // { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
